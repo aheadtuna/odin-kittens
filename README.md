@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+This is a Kittens Api --> https://www.theodinproject.com/lessons/ruby-on-rails-kittens-api#warmup-exploring-the-flickr-api
+
