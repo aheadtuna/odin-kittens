@@ -1,0 +1,28 @@
+<% if kitten.errors.any? %>
+    <ul>
+        <% kitten.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+    </ul> 
+<% end %>
+
+
+<%= form_with model: kitten do |f| %>
+    <%= f.label :name, "Name:" %>
+    <%= f.text_field :name %>
+
+    <%= f.label :age, "Age:" %>
+    <%= f.number_field :age %>
+
+    <%= f.label :cuteness, "Cuteness:" %>
+    <%= f.range_field :cuteness, min: 0, max: 10%>
+
+    <%= f.label :softness, "Softness:" %>
+    <%= f.range_field :softness, min: 0, max: 10 %>
+
+    <% if kitten.persisted? %>
+        <%= f.submit "Update #{kitten.name}!" %>
+    <% else %>
+        <%= f.submit "Create Kitten!" %>
+    <% end %>
+<% end %>

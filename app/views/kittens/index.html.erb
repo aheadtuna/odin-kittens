@@ -1,0 +1,9 @@
+<h1>All Kittens</h1>
+<% unless @kittens.empty? || @kittens.nil? %>
+    <% @kittens.each do |kitten| %>
+        <%= render "kitten", kitten: kitten %>
+    <% end %>
+<% else %>
+    <p>No Kittens Found</p>
+<% end %>
+<%= button_to "Create a kitten", new_kitten_path, method: :get %>

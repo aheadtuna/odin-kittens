@@ -1,0 +1,10 @@
+<h2><%= kitten.name %></h2>
+<h3>Age:</h3>
+<p><%= kitten.age %></p>
+<h3>Cuteness:</h3>
+<p><%= kitten.cuteness %></p>
+<h3>Softness:</h3>
+<p><%= kitten.softness %></p>
+
+<%= link_to "Edit #{kitten.name}", edit_kitten_path(kitten)%>
+<%= link_to "Delete #{kitten.name}", kitten_path(kitten), method: :delete, data: { confirm: "Do you really want to DELETE precious #{kitten.name}. It wont be nice ..." } %>
