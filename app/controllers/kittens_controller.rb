@@ -26,10 +26,20 @@ class KittensController < ApplicationController
 
   def show
     @kitten = Kitten.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @kitten }
+    end
   end
 
   def index
     @kittens = Kitten.all
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @kittens }
+    end
   end
 
   def update
@@ -38,7 +48,7 @@ class KittensController < ApplicationController
     if @kitten.update(kitten_params)
       redirect_to @kitten, notice: "Updated #{@kitten.name} succesfully"
     else
-      render :new, :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
